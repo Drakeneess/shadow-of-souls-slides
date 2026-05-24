@@ -1,0 +1,390 @@
+/* Slide 28 - Behavioral indicators */
+
+.behavioral-indicators-slide .slide-shell {
+  min-height: min(70vh, 680px);
+  padding: 28px 38px;
+  justify-content: center;
+}
+
+.behavioral-indicators-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(28px, 3.25vw, 46px);
+  line-height: 1;
+}
+
+.behavioral-indicators-slide .slide-content {
+  max-width: 1120px;
+  margin-top: 16px;
+}
+
+.slide28-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  grid-template-areas:
+    "main focus"
+    "grid grid"
+    "note summary";
+  gap: 12px;
+  align-items: stretch;
+}
+
+.indicators-main-card,
+.indicator-focus-card,
+.indicator-card,
+.indicator-note-card,
+.indicator-summary-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.07), transparent 42%),
+    rgba(255, 255, 255, 0.022);
+  box-shadow: var(--shadow-soft);
+}
+
+.indicators-main-card::before,
+.indicator-focus-card::before,
+.indicator-card::before,
+.indicator-note-card::before,
+.indicator-summary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(230, 221, 210, 0.045) 46%,
+      transparent 72%
+    );
+  transform: translateX(-120%);
+  animation: slide28Sheen 8s ease-in-out infinite;
+}
+
+.indicators-main-card {
+  grid-area: main;
+  padding: 16px;
+}
+
+.indicator-focus-card {
+  grid-area: focus;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.indicators-grid {
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.indicator-note-card {
+  grid-area: note;
+}
+
+.indicator-summary-card {
+  grid-area: summary;
+}
+
+.indicator-note-card,
+.indicator-summary-card {
+  min-height: 56px;
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+  color: var(--fog);
+}
+
+.indicators-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 10px;
+}
+
+.indicators-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.indicators-icon-main {
+  width: 46px;
+  height: 46px;
+}
+
+.indicators-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.indicators-main-card h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.indicators-main-card p,
+.indicator-note-card p,
+.indicator-summary-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.indicators-main-card p {
+  font-size: 12.5px;
+}
+
+.indicator-note-card p,
+.indicator-summary-card p {
+  font-size: 11.5px;
+}
+
+/* Pipeline */
+
+.indicator-pipeline {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.indicator-pipeline-step {
+  display: grid;
+  grid-template-columns: 1fr 18px;
+  gap: 6px;
+  align-items: center;
+}
+
+.indicator-pipeline-step span {
+  min-height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.026);
+  color: var(--text-secondary);
+  font-size: 9.8px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.indicator-pipeline-step strong {
+  color: var(--fog);
+  font-size: 14px;
+}
+
+/* Radar visual */
+
+.indicator-radar {
+  position: relative;
+  z-index: 1;
+  width: 330px;
+  height: 190px;
+}
+
+.radar-ring {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.ring-1 {
+  width: 90px;
+  height: 90px;
+}
+
+.ring-2 {
+  width: 170px;
+  height: 140px;
+}
+
+.ring-3 {
+  width: 290px;
+  height: 180px;
+}
+
+.radar-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center, rgba(167, 155, 141, 0.12), transparent 72%),
+    rgba(255, 255, 255, 0.026);
+  color: var(--fog);
+  box-shadow: var(--shadow-soft);
+}
+
+.radar-center span {
+  display: block;
+  margin-top: -12px;
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.radar-node {
+  position: absolute;
+  min-width: 84px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.026);
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.node-top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.node-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.node-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.node-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* Indicator cards */
+
+.indicator-card {
+  min-height: 126px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 9px;
+  align-items: start;
+}
+
+.indicator-card span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 9.3px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.indicator-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+  font-size: 11px;
+  line-height: 1.12;
+}
+
+.indicator-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 10.4px;
+  line-height: 1.2;
+}
+
+@keyframes slide28Sheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.18;
+  }
+
+  40% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indicators-main-card::before,
+  .indicator-focus-card::before,
+  .indicator-card::before,
+  .indicator-note-card::before,
+  .indicator-summary-card::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide28-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "focus"
+      "grid"
+      "note"
+      "summary";
+  }
+
+  .indicators-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .indicator-radar {
+    width: 100%;
+    max-width: 330px;
+  }
+}

@@ -1,0 +1,323 @@
+/* Slide 34 - Recommendations */
+
+.recommendations-slide .slide-shell {
+  min-height: min(70vh, 680px);
+  padding: 26px 36px;
+  justify-content: center;
+}
+
+.recommendations-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(28px, 3.15vw, 44px);
+  line-height: 1;
+}
+
+.recommendations-slide .slide-content {
+  max-width: 1120px;
+  margin-top: 14px;
+}
+
+.slide34-layout {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  grid-template-areas:
+    "main grid"
+    "future grid"
+    "note note";
+  gap: 10px;
+  align-items: start;
+  align-content: start;
+}
+
+.recommendations-main-card,
+.recommendation-card,
+.future-lines-card,
+.recommendations-note-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.07), transparent 42%),
+    rgba(255, 255, 255, 0.022);
+  box-shadow: var(--shadow-soft);
+}
+
+.recommendations-main-card::before,
+.recommendation-card::before,
+.future-lines-card::before,
+.recommendations-note-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(230, 221, 210, 0.045) 46%,
+      transparent 72%
+    );
+  transform: translateX(-120%);
+  animation: slide34Sheen 8s ease-in-out infinite;
+}
+
+.recommendations-main-card {
+  grid-area: main;
+  padding: 15px;
+}
+
+.recommendations-grid {
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.future-lines-card {
+  grid-area: future;
+  padding: 14px;
+}
+
+.recommendations-note-card {
+  grid-area: note;
+  min-height: 54px;
+  padding: 11px 13px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+  color: var(--fog);
+}
+
+.recommendations-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.recommendations-icon,
+.recommendations-icon-main {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.recommendations-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.recommendations-icon-main {
+  width: 44px;
+  height: 44px;
+}
+
+.recommendations-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 9.7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.recommendations-main-card h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.recommendations-main-card p,
+.recommendations-note-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.26;
+}
+
+.recommendations-main-card p {
+  font-size: 11.8px;
+}
+
+.recommendations-note-card p {
+  font-size: 10.9px;
+}
+
+/* Recommendation cards */
+
+.recommendation-card {
+  min-height: 178px;
+  padding: 13px;
+}
+
+.recommendation-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.recommendation-number {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  font-size: 10.8px;
+  font-weight: 700;
+}
+
+.recommendation-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.recommendation-block {
+  position: relative;
+  z-index: 1;
+  padding: 8px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.recommendation-block + .recommendation-block {
+  margin-top: 7px;
+}
+
+.recommendation-block span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--fog);
+  font-size: 8.8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.recommendation-block p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 10.2px;
+  line-height: 1.18;
+}
+
+.recommendation-block.emphasized {
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.055), transparent 45%),
+    rgba(255, 255, 255, 0.026);
+}
+
+/* Future lines */
+
+.future-lines-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--fog);
+}
+
+.future-lines-header span {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.future-lines-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 8px;
+}
+
+.future-line-chip {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.024);
+}
+
+.future-line-chip span {
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+@keyframes slide34Sheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.18;
+  }
+
+  40% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recommendations-main-card::before,
+  .recommendation-card::before,
+  .future-lines-card::before,
+  .recommendations-note-card::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide34-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "grid"
+      "future"
+      "note";
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+}

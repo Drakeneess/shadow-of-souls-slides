@@ -1,0 +1,154 @@
+/* Slide 04 - Institutional problem */
+
+.institutional-problem-slide .slide-shell {
+  min-height: min(74vh, 700px);
+  padding: 28px 36px;
+  justify-content: center;
+}
+
+.institutional-problem-slide h1 {
+  max-width: 1040px;
+  font-size: clamp(28px, 3.1vw, 46px);
+  line-height: 1.02;
+}
+
+.institutional-problem-slide .slide-content {
+  max-width: 1120px;
+  margin-top: 16px;
+}
+
+.institutional-problem-layout {
+  display: grid;
+  grid-template-columns: 0.42fr 1.58fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.problem-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mini-panel {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.mini-panel h3 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.mini-panel p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13.2px;
+  line-height: 1.38;
+}
+
+/* Ishikawa */
+
+.ishikawa-figure {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ishikawa-figure .figure-image-wrap {
+
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.ishikawa-figure .figure-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ishikawa-figure .figure-caption {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+/* Ishikawa */
+
+.ishikawa-figure {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ishikawa-figure .figure-image-wrap {
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 52% 50%,
+      rgba(230, 221, 210, 0.13),
+      rgba(167, 155, 141, 0.07) 42%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    rgba(20, 18, 16, 0.9);
+
+  border: 1px solid rgba(230, 221, 210, 0.14);
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 0 0 80px rgba(230, 221, 210, 0.035),
+    var(--shadow-soft);
+}
+
+.ishikawa-figure .figure-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 18, 16, 0.22),
+      transparent 18%,
+      transparent 82%,
+      rgba(20, 18, 16, 0.26)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(20, 18, 16, 0.22),
+      transparent 18%,
+      transparent 82%,
+      rgba(20, 18, 16, 0.28)
+    );
+
+  z-index: 1;
+}
+
+.ishikawa-figure .figure-image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  filter:
+    contrast(1.12)
+    brightness(1.08)
+    saturate(0.92);
+}
+
+.ishikawa-figure .figure-caption {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.25;
+}

@@ -1,0 +1,330 @@
+/* Slide 23 - Sprint development */
+
+.sprint-development-slide .slide-shell {
+  min-height: min(70vh, 680px);
+  padding: 28px 38px;
+  justify-content: center;
+}
+
+.sprint-development-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(28px, 3.25vw, 46px);
+  line-height: 1;
+}
+
+.sprint-development-slide .slide-content {
+  max-width: 1120px;
+  margin-top: 16px;
+}
+
+.slide23-layout {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-areas:
+    "main timeline"
+    "grid grid"
+    "note note";
+  gap: 12px;
+  align-items: stretch;
+}
+
+.sprint-main-card,
+.sprint-timeline-card,
+.sprint-card,
+.sprint-note-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.07), transparent 42%),
+    rgba(255, 255, 255, 0.022);
+  box-shadow: var(--shadow-soft);
+}
+
+.sprint-main-card::before,
+.sprint-timeline-card::before,
+.sprint-card::before,
+.sprint-note-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(230, 221, 210, 0.045) 46%,
+      transparent 72%
+    );
+  transform: translateX(-120%);
+  animation: slide23Sheen 8s ease-in-out infinite;
+}
+
+.sprint-main-card {
+  grid-area: main;
+  padding: 16px;
+}
+
+.sprint-timeline-card {
+  grid-area: timeline;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.sprint-grid {
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.sprint-note-card {
+  grid-area: note;
+  min-height: 56px;
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+  color: var(--fog);
+}
+
+.sprint-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 10px;
+}
+
+.sprint-icon,
+.sprint-icon-main,
+.sprint-timeline-node {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.sprint-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.sprint-icon-main {
+  width: 46px;
+  height: 46px;
+}
+
+.sprint-timeline-node {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 8px;
+}
+
+.sprint-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sprint-main-card h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.sprint-main-card p,
+.sprint-note-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.sprint-main-card p {
+  font-size: 12.6px;
+}
+
+.sprint-note-card p {
+  font-size: 11.6px;
+}
+
+/* Timeline */
+
+.sprint-timeline {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.sprint-timeline-step {
+  position: relative;
+  min-height: 118px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid var(--line);
+}
+
+.sprint-timeline-step span {
+  color: var(--fog);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sprint-timeline-step strong {
+  margin-top: 5px;
+  color: var(--text-primary);
+  font-size: 12.2px;
+  line-height: 1.16;
+  text-align: center;
+}
+
+.sprint-timeline-arrow {
+  position: absolute;
+  right: -17px;
+  top: 47%;
+  transform: translateY(-50%);
+  color: var(--fog);
+  font-size: 18px;
+  z-index: 2;
+}
+
+/* Cards */
+
+.sprint-card {
+  min-height: 168px;
+  padding: 13px;
+}
+
+.sprint-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sprint-number {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sprint-card h3 {
+  position: relative;
+  z-index: 1;
+  min-height: 38px;
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 14.2px;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+}
+
+.sprint-card ul {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sprint-card li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 5px;
+  align-items: start;
+  color: var(--fog);
+}
+
+.sprint-card li span {
+  color: var(--text-secondary);
+  font-size: 10.6px;
+  line-height: 1.18;
+}
+
+@keyframes slide23Sheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.18;
+  }
+
+  40% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprint-main-card::before,
+  .sprint-timeline-card::before,
+  .sprint-card::before,
+  .sprint-note-card::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide23-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "timeline"
+      "grid"
+      "note";
+  }
+
+  .sprint-timeline,
+  .sprint-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sprint-timeline-arrow {
+    display: none;
+  }
+}

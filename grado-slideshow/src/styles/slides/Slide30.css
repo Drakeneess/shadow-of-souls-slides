@@ -1,0 +1,518 @@
+/* Slide 30 - Study graphs */
+
+/* =========================
+   Slide shell
+========================= */
+
+.study-graphs-slide .slide-shell {
+  min-height: min(100vh, 900px);
+  padding: 18px 34px 22px;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.study-graphs-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(30px, 3.2vw, 48px);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.study-graphs-slide .slide-content {
+  width: 100%;
+  max-width: 1180px;
+  margin-top: 14px;
+}
+
+/* =========================
+   Main layout
+========================= */
+
+.slide30-layout {
+  display: grid;
+  grid-template-columns: 0.58fr 1.42fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "main primary"
+    "secondary primary"
+    "tertiary primary"
+    "results results";
+  gap: 10px;
+  align-items: stretch;
+  align-content: start;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.study-main-card,
+.study-chart-card,
+.study-result-card,
+.study-note-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.07), transparent 42%),
+    rgba(255, 255, 255, 0.022);
+  box-shadow: var(--shadow-soft);
+}
+
+.study-main-card::before,
+.study-chart-card::before,
+.study-result-card::before,
+.study-note-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(230, 221, 210, 0.045) 46%,
+      transparent 72%
+    );
+  transform: translateX(-120%);
+  animation: slide30Sheen 8s ease-in-out infinite;
+}
+
+.study-main-card {
+  grid-area: main;
+  padding: 14px 15px;
+  min-height: 118px;
+}
+
+.study-chart-primary {
+  grid-area: primary;
+  min-height: 390px;
+}
+
+.study-chart-secondary {
+  grid-area: secondary;
+  min-height: 160px;
+}
+
+.study-chart-tertiary {
+  grid-area: tertiary;
+  min-height: 165px;
+}
+
+.study-chart-card {
+  padding: 11px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* La nota estaba robando espacio.
+   En esta slide conviene integrarla como texto verbal o moverla a otra slide. */
+.study-note-card {
+  display: none;
+}
+
+/* =========================
+   Header card
+========================= */
+
+.study-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 9px;
+}
+
+.study-icon,
+.study-result-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.study-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.study-icon-main {
+  width: 44px;
+  height: 44px;
+}
+
+.study-kicker {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--fog);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.study-main-card h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.study-main-card p,
+.study-note-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.28;
+}
+
+.study-main-card p {
+  max-width: 92%;
+  font-size: 11.8px;
+}
+
+/* =========================
+   Chart container
+========================= */
+
+.study-chart-figure,
+.custom-chart-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.custom-chart-title {
+  flex: 0 0 auto;
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+/* Wrapper defensivo por si tu componente usa figure-image-wrap */
+.study-chart-figure .figure-image-wrap {
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.study-chart-figure .figure-caption {
+  display: none;
+}
+
+/* =========================
+   SVG chart sizing
+========================= */
+
+.custom-chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* Gráfico principal: más aire vertical, mejor lectura */
+.study-chart-primary .custom-chart-card {
+  min-height: 360px;
+}
+
+.study-chart-primary .custom-chart-svg {
+  height: 330px;
+}
+
+/* Gráficos secundarios: compactos pero legibles */
+.study-chart-secondary .custom-chart-card,
+.study-chart-tertiary .custom-chart-card {
+  min-height: 132px;
+}
+
+.study-chart-secondary .custom-chart-svg,
+.study-chart-tertiary .custom-chart-svg {
+  height: 118px;
+}
+
+/* Si el componente todavía renderiza imágenes internas */
+.study-chart-primary .study-chart-figure .figure-image,
+.study-chart-primary .study-chart-figure .figure-contain .figure-image {
+  width: 100%;
+  height: 330px;
+  max-height: 330px;
+  object-fit: contain;
+}
+
+.study-chart-secondary .study-chart-figure .figure-image,
+.study-chart-secondary .study-chart-figure .figure-contain .figure-image,
+.study-chart-tertiary .study-chart-figure .figure-image,
+.study-chart-tertiary .study-chart-figure .figure-contain .figure-image {
+  width: 100%;
+  height: 118px;
+  max-height: 118px;
+  object-fit: contain;
+}
+
+/* =========================
+   Chart visual language
+========================= */
+
+.chart-grid-line {
+  stroke: rgba(230, 221, 210, 0.13);
+  stroke-width: 1;
+}
+
+.chart-axis-label {
+  fill: var(--text-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.boxplot-whisker,
+.boxplot-cap {
+  stroke: rgba(230, 221, 210, 0.58);
+  stroke-width: 2;
+}
+
+.boxplot-box {
+  fill: rgba(167, 155, 141, 0.42);
+  stroke: rgba(230, 221, 210, 0.38);
+  stroke-width: 1.5;
+}
+
+.boxplot-box.cluster-a {
+  fill: rgba(75, 96, 124, 0.78);
+}
+
+.boxplot-box.cluster-b {
+  fill: rgba(116, 123, 124, 0.78);
+}
+
+.boxplot-box.cluster-c {
+  fill: rgba(128, 46, 72, 0.8);
+}
+
+.boxplot-median {
+  stroke: rgba(18, 16, 14, 0.95);
+  stroke-width: 3;
+}
+
+.boxplot-outlier {
+  fill: rgba(230, 221, 210, 0.08);
+  stroke: rgba(230, 221, 210, 0.82);
+  stroke-width: 2;
+}
+
+/* =========================
+   Histogram fix
+========================= */
+
+/* El histograma se veía como un grupo de pobres postes deprimidos.
+   Le damos peso visual y mejor lectura. */
+
+.study-chart-tertiary .custom-chart-title {
+  margin-bottom: 6px;
+}
+
+.study-chart-tertiary .custom-chart-svg {
+  height: 124px;
+}
+
+.histogram-bar {
+  fill: rgba(75, 96, 124, 0.86);
+  stroke: rgba(230, 221, 210, 0.22);
+  stroke-width: 1;
+  rx: 3px;
+}
+
+.histogram-bar:hover {
+  fill: rgba(87, 112, 146, 0.95);
+}
+
+.histogram-mean-line {
+  stroke: rgba(207, 190, 163, 0.95);
+  stroke-width: 2.25;
+  stroke-dasharray: 6 5;
+}
+
+.study-chart-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+  color: var(--fog);
+}
+
+.study-chart-label span {
+  color: var(--text-secondary);
+  font-size: 9.3px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   Result cards
+========================= */
+
+.study-result-grid {
+  grid-area: results;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 2px;
+}
+
+.study-result-card {
+  min-height: 64px;
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 9px;
+  align-items: center;
+}
+
+.study-result-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.study-result-card span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 9.4px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.study-result-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 10px;
+  line-height: 1.18;
+}
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes slide30Sheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.14;
+  }
+
+  40% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .study-main-card::before,
+  .study-chart-card::before,
+  .study-result-card::before,
+  .study-note-card::before {
+    animation: none;
+  }
+}
+
+/* =========================
+   Medium screens
+========================= */
+
+@media (max-width: 1100px) {
+  .study-graphs-slide .slide-shell {
+    padding: 16px 24px 20px;
+  }
+
+  .study-graphs-slide .slide-content {
+    max-width: 1040px;
+  }
+
+  .slide30-layout {
+    grid-template-columns: 0.64fr 1.36fr;
+    gap: 9px;
+  }
+
+  .study-chart-primary {
+    min-height: 350px;
+  }
+
+  .study-chart-primary .custom-chart-svg {
+    height: 300px;
+  }
+
+  .study-chart-secondary .custom-chart-svg,
+  .study-chart-tertiary .custom-chart-svg {
+    height: 108px;
+  }
+}
+
+/* =========================
+   Small screens
+========================= */
+
+@media (max-width: 900px) {
+  .study-graphs-slide .slide-shell {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .slide30-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "primary"
+      "secondary"
+      "tertiary"
+      "results";
+  }
+
+  .study-chart-primary,
+  .study-chart-secondary,
+  .study-chart-tertiary {
+    min-height: auto;
+  }
+
+  .study-chart-primary .custom-chart-svg {
+    height: 280px;
+  }
+
+  .study-chart-secondary .custom-chart-svg,
+  .study-chart-tertiary .custom-chart-svg {
+    height: 160px;
+  }
+
+  .study-result-grid {
+    grid-template-columns: 1fr;
+  }
+}

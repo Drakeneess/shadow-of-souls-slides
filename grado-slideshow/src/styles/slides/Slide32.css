@@ -1,0 +1,283 @@
+/* Slide 32 - Chapter IV findings */
+
+.chapter-four-findings-slide .slide-shell {
+  min-height: min(70vh, 680px);
+  padding: 26px 36px;
+  justify-content: center;
+}
+
+.chapter-four-findings-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(28px, 3.15vw, 44px);
+  line-height: 1;
+}
+
+.chapter-four-findings-slide .slide-content {
+  max-width: 1120px;
+  margin-top: 14px;
+}
+
+.slide32-layout {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-areas:
+    "main table"
+    "note table";
+  gap: 10px;
+  align-items: start;
+  align-content: start;
+}
+
+.findings-main-card,
+.findings-table-card,
+.findings-note-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.07), transparent 42%),
+    rgba(255, 255, 255, 0.022);
+  box-shadow: var(--shadow-soft);
+}
+
+.findings-main-card::before,
+.findings-table-card::before,
+.findings-note-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(230, 221, 210, 0.045) 46%,
+      transparent 72%
+    );
+  transform: translateX(-120%);
+  animation: slide32Sheen 8s ease-in-out infinite;
+}
+
+.findings-main-card {
+  grid-area: main;
+  padding: 15px;
+}
+
+.findings-table-card {
+  grid-area: table;
+  padding: 14px;
+}
+
+.findings-note-card {
+  grid-area: note;
+  min-height: 54px;
+  padding: 11px 13px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+  color: var(--fog);
+}
+
+.findings-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.findings-icon,
+.findings-icon-main,
+.finding-row-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.findings-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.findings-icon-main {
+  width: 44px;
+  height: 44px;
+}
+
+.finding-row-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.findings-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 9.7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.findings-main-card h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.findings-main-card p,
+.findings-note-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.26;
+}
+
+.findings-main-card p {
+  font-size: 11.8px;
+}
+
+.findings-note-card p {
+  font-size: 10.9px;
+}
+
+/* Table */
+
+.findings-table {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 7px;
+}
+
+.findings-table-header,
+.findings-table-row {
+  display: grid;
+  grid-template-columns: 0.78fr 1.5fr 0.42fr;
+  gap: 9px;
+  align-items: center;
+}
+
+.findings-table-header {
+  min-height: 34px;
+  padding: 0 10px;
+  color: var(--fog);
+}
+
+.findings-table-header span {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.findings-table-row {
+  min-height: 74px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background:
+    radial-gradient(circle at left, rgba(167, 155, 141, 0.055), transparent 44%),
+    rgba(255, 255, 255, 0.022);
+}
+
+.finding-component {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.finding-component strong {
+  color: var(--text-primary);
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+}
+
+.findings-table-row p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 10.8px;
+  line-height: 1.22;
+}
+
+.finding-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.024);
+}
+
+.finding-status span {
+  color: var(--text-secondary);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes slide32Sheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.18;
+  }
+
+  40% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .findings-main-card::before,
+  .findings-table-card::before,
+  .findings-note-card::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide32-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "table"
+      "note";
+  }
+
+  .findings-table-header,
+  .findings-table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .finding-status {
+    width: fit-content;
+  }
+}

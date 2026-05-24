@@ -1,0 +1,300 @@
+/* Cover */
+
+.title-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thesis-title {
+  max-width: 1120px;
+  font-size: clamp(34px, 4.2vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.compact-cover .slide-shell {
+  min-height: min(80vh, 780px);
+  padding: 38px 52px;
+  justify-content: space-between;
+}
+
+.cover-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.institution-label {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.career-label {
+  margin: 0;
+  max-width: 980px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.compact-thesis-title {
+  max-width: 1160px;
+  font-size: clamp(30px, 3.55vw, 54px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.case-line {
+  margin: 14px 0 0;
+  color: var(--fog);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.compact-meta-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1.25fr 0.75fr 0.55fr;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.meta-card {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.compact-meta-grid .meta-card {
+  padding: 13px 15px;
+}
+
+.meta-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.compact-meta-grid .meta-label {
+  font-size: 10.5px;
+}
+
+.meta-value {
+  color: var(--text-primary);
+  font-size: 17px;
+}
+
+.compact-meta-grid .meta-value {
+  font-size: 14.5px;
+  line-height: 1.35;
+}
+
+/* Idea central */
+
+.hybrid-system {
+  display: grid;
+  grid-template-columns: 1fr 90px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.system-node {
+  min-height: 250px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.07), transparent 38%),
+    var(--surface-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.system-node h3 {
+  margin: 0 0 14px;
+  color: var(--text-primary);
+  font-size: 26px;
+}
+
+.system-node p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.system-connector {
+  display: grid;
+  place-items: center;
+  color: var(--fog);
+  font-size: 34px;
+  opacity: 0.85;
+}
+
+/* Problema humano */
+
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.signal-card {
+  min-height: 135px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.022);
+}
+
+.signal-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--fog);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.signal-card strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 21px;
+  line-height: 1.15;
+}
+
+/* Problema institucional */
+
+.problem-map {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+
+.problem-axis {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.axis-item {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.022);
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+/* Pregunta de investigación */
+
+.question-box {
+  padding: 34px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.08), transparent 38%),
+    rgba(255, 255, 255, 0.026);
+  box-shadow: var(--shadow-soft);
+}
+
+.question-text {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.24;
+  letter-spacing: -0.035em;
+}
+
+/* Objetivos */
+
+.objectives-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.objective-main {
+  padding: 26px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.028);
+}
+
+.objective-main h3,
+.objective-list h3 {
+  margin: 0 0 14px;
+  color: var(--text-primary);
+  font-size: 22px;
+}
+
+.objective-main p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.objective-list {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-soft);
+}
+
+.objective-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.objective-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.objective-number {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  font-size: 13px;
+}
+
+.objective-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 16.5px;
+  line-height: 1.45;
+}

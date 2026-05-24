@@ -1,0 +1,88 @@
+.core-idea-slide .slide-shell {
+  min-height: min(70vh, 675px);
+  padding: 26px 38px;
+  justify-content: center;
+}
+
+.core-idea-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(28px, 3.2vw, 46px);
+  line-height: 1;
+}
+
+.core-idea-slide .slide-content {
+  max-width: 1120px;
+  margin-top: 12px;
+}
+
+.compact-lead {
+  max-width: 1040px;
+  margin: 0;
+  font-size: clamp(16px, 1.15vw, 18.5px);
+  line-height: 1.28;
+}
+
+.hybrid-system-asymmetric {
+  display: grid;
+  grid-template-columns: 1fr 54px 1fr;
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 14px;
+}
+
+.system-node-asymmetric {
+  padding: 13px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 9px;
+  overflow: hidden;
+}
+
+.panel-node {
+  grid-template-rows: auto 1fr;
+}
+
+.system-node-header {
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.system-node-header h3 {
+  font-size: 18.5px;
+}
+
+.node-index {
+  width: 26px;
+  height: 26px;
+  font-size: 10.5px;
+}
+
+.system-node-asymmetric p {
+  font-size: 13px;
+  line-height: 1.28;
+}
+
+.system-node-asymmetric .figure-image-wrap {
+  aspect-ratio: 16 / 7.4;
+  padding: 5px;
+}
+
+.system-node-asymmetric .figure-contain .figure-image {
+  max-height: 205px;
+}
+
+.system-node-asymmetric .figure-caption {
+  margin-top: 4px;
+  font-size: 9.4px;
+  line-height: 1.15;
+}
+
+.system-connector-flow span {
+  font-size: 27px;
+}
+
+.system-connector-flow small {
+  max-width: 56px;
+  font-size: 8.8px;
+  line-height: 1.12;
+}

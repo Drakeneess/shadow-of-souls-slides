@@ -1,0 +1,332 @@
+/* Slide 11 - Research approach */
+
+.research-approach-slide .slide-shell {
+  min-height: min(70vh, 680px);
+  padding: 28px 38px;
+  justify-content: center;
+}
+
+.research-approach-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(28px, 3.25vw, 46px);
+  line-height: 1;
+}
+
+.research-approach-slide .slide-content {
+  max-width: 1120px;
+  margin-top: 16px;
+}
+
+.slide11-layout {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-areas:
+    "main triangle"
+    "sources triangle";
+  gap: 12px;
+  align-items: stretch;
+}
+
+.approach-main-card,
+.approach-source-card,
+.approach-triangulation-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.07), transparent 42%),
+    rgba(255, 255, 255, 0.022);
+  box-shadow: var(--shadow-soft);
+}
+
+.approach-main-card {
+  grid-area: main;
+  padding: 17px;
+}
+
+.approach-source-grid {
+  grid-area: sources;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.approach-source-card {
+  padding: 15px;
+}
+
+.approach-triangulation-card {
+  grid-area: triangle;
+  padding: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.approach-main-card::before,
+.approach-source-card::before,
+.approach-triangulation-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(230, 221, 210, 0.045) 46%,
+      transparent 72%
+    );
+  transform: translateX(-120%);
+  animation: slide11Sheen 8s ease-in-out infinite;
+}
+
+.approach-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 10px;
+}
+
+.compact-header {
+  gap: 9px;
+  margin-bottom: 8px;
+}
+
+.approach-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.approach-icon-main {
+  width: 46px;
+  height: 46px;
+}
+
+.approach-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.approach-main-card h3,
+.approach-source-card h3 {
+  margin: 0;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+.approach-main-card h3 {
+  font-size: 22px;
+}
+
+.approach-source-card h3 {
+  font-size: 16px;
+}
+
+.approach-main-card p,
+.approach-source-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.34;
+}
+
+.approach-main-card p {
+  font-size: 13.8px;
+}
+
+.approach-source-card p {
+  font-size: 12.5px;
+}
+
+.approach-equation {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.equation-block {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.024);
+  color: var(--fog);
+}
+
+.equation-block span {
+  color: var(--text-secondary);
+  font-size: 11.3px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.result-block span {
+  color: var(--text-primary);
+}
+
+.approach-equation strong {
+  color: var(--fog);
+  font-size: 18px;
+}
+
+/* Triangulation visual */
+
+.approach-triangle {
+  width: min(100%, 360px);
+  height: 360px;
+  position: relative;
+}
+
+.triangle-node,
+.triangle-center {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.triangle-node {
+  width: 132px;
+  min-height: 52px;
+  padding: 9px 11px;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.026);
+  font-size: 11.2px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.top-node {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left-node {
+  left: 0;
+  bottom: 40px;
+}
+
+.right-node {
+  right: 0;
+  bottom: 40px;
+}
+
+.triangle-center {
+  width: 104px;
+  height: 104px;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  color: var(--fog);
+  background:
+    radial-gradient(circle at center, rgba(167, 155, 141, 0.12), transparent 72%),
+    rgba(255, 255, 255, 0.024);
+}
+
+.triangle-center span {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.approach-triangle::before {
+  content: "";
+  position: absolute;
+  inset: 64px 58px 86px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border: 1px solid var(--line-strong);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(230, 221, 210, 0.05),
+      rgba(230, 221, 210, 0.012)
+    );
+  opacity: 0.9;
+}
+
+@keyframes slide11Sheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.18;
+  }
+
+  40% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .approach-main-card::before,
+  .approach-source-card::before,
+  .approach-triangulation-card::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide11-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "sources"
+      "triangle";
+  }
+
+  .approach-source-grid,
+  .approach-equation {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-equation strong {
+    display: none;
+  }
+}

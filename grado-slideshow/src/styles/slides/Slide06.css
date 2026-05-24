@@ -1,0 +1,155 @@
+/* Slide 06 - Objectives */
+
+.objectives-slide .slide-shell {
+  min-height: min(74vh, 710px);
+  padding: 28px 40px;
+  justify-content: center;
+}
+
+.objectives-slide h1 {
+  max-width: 1080px;
+  font-size: clamp(30px, 3.45vw, 50px);
+  line-height: 1;
+}
+
+.objectives-slide .slide-content {
+  max-width: 1100px;
+  margin-top: 16px;
+}
+
+.objective-main-hero {
+  padding: 18px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.09), transparent 38%),
+    rgba(255, 255, 255, 0.028);
+  box-shadow: var(--shadow-soft);
+}
+
+.objective-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.objective-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.objective-icon-main {
+  width: 46px;
+  height: 46px;
+}
+
+.objective-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--fog);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.objective-main-hero h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  letter-spacing: -0.025em;
+}
+
+.objective-main-hero p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14.7px;
+  line-height: 1.36;
+}
+
+.specific-objectives-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 10px;
+}
+
+.specific-objectives-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 19px;
+  letter-spacing: -0.025em;
+}
+
+.specific-objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.specific-objective-card {
+  min-height: 128px;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.06), transparent 44%),
+    rgba(255, 255, 255, 0.022);
+  box-shadow: var(--shadow-soft);
+}
+
+.specific-objective-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--fog);
+}
+
+.objective-number {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fog);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.specific-objective-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13.1px;
+  line-height: 1.32;
+}
+
+.specific-objective-top svg {
+  width: 21px;
+  height: 21px;
+}
+
+.objective-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.objective-icon-main svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 900px) {
+  .specific-objectives-grid {
+    grid-template-columns: 1fr;
+  }
+}
