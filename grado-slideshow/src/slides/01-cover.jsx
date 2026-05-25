@@ -19,7 +19,7 @@ export default function CoverSlide() {
         </h1>
 
         <p className="case-line">
-          CASO: UNIDAD EDUCATIVA HUMANÍSTICA PATER NOSTER
+          CASO: UNIDAD EDUCATIVA PATER NOSTER
         </p>
       </div>
 
