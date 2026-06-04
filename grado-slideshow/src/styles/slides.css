@@ -298,3 +298,290 @@
   font-size: 16.5px;
   line-height: 1.45;
 }
+
+/* Cover slide */
+
+.cover-slide .slide-shell {
+  min-height: min(78vh, 760px);
+  padding: 32px 42px;
+  justify-content: center;
+}
+
+.cover-slide .slide-content {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.cover-frame {
+  position: relative;
+  min-height: 640px;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 34px;
+
+  overflow: hidden;
+  padding: 38px 42px;
+
+  border: 1px solid rgba(230, 221, 210, 0.12);
+  border-radius: calc(var(--radius-md) + 14px);
+
+  background:
+    radial-gradient(
+      circle at 78% 28%,
+      rgba(167, 155, 141, 0.2),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 18% 82%,
+      rgba(230, 221, 210, 0.09),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.012)
+    ),
+    rgba(20, 18, 16, 0.95);
+
+  box-shadow:
+    inset 0 0 130px rgba(230, 221, 210, 0.026),
+    var(--shadow-soft);
+}
+
+.cover-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 18, 16, 0.38),
+      transparent 22%,
+      transparent 78%,
+      rgba(20, 18, 16, 0.44)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(20, 18, 16, 0.22),
+      transparent 24%,
+      transparent 76%,
+      rgba(20, 18, 16, 0.42)
+    );
+
+  z-index: 1;
+}
+
+.cover-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  opacity: 0.14;
+
+  background-image:
+    linear-gradient(rgba(230, 221, 210, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230, 221, 210, 0.08) 1px, transparent 1px);
+
+  background-size: 54px 54px;
+
+  mask-image:
+    radial-gradient(circle at 72% 44%, black, transparent 65%);
+}
+
+.cover-ring {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+
+  border: 1px solid rgba(230, 221, 210, 0.08);
+  border-radius: 999px;
+}
+
+.cover-ring-one {
+  width: 620px;
+  height: 620px;
+  right: -210px;
+  top: -180px;
+
+  box-shadow:
+    0 0 0 90px rgba(230, 221, 210, 0.016),
+    0 0 0 180px rgba(230, 221, 210, 0.01);
+}
+
+.cover-ring-two {
+  width: 340px;
+  height: 340px;
+  left: -150px;
+  bottom: -160px;
+
+  box-shadow:
+    0 0 0 70px rgba(230, 221, 210, 0.012);
+}
+
+.cover-header,
+.title-stack,
+.compact-meta-grid {
+  position: relative;
+  z-index: 2;
+}
+
+.cover-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid rgba(230, 221, 210, 0.11);
+}
+
+.institution-label {
+  margin: 0;
+
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 850;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.career-label {
+  max-width: 920px;
+  margin: 0;
+
+  color: var(--fog);
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title-stack {
+  align-self: center;
+  max-width: 1030px;
+}
+
+.title-kicker {
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+
+  color: rgba(236, 232, 224, 0.78);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(230, 221, 210, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.028);
+}
+
+.thesis-title {
+  margin: 0;
+
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.compact-thesis-title {
+  max-width: 1080px;
+
+  font-size: clamp(30px, 3.7vw, 56px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+}
+
+.case-line {
+  width: fit-content;
+  margin: 28px 0 0;
+  padding: 11px 15px;
+
+  color: rgba(236, 232, 224, 0.86);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(230, 221, 210, 0.13);
+  border-radius: var(--radius-md);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(230, 221, 210, 0.065),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.026);
+}
+
+.compact-meta-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1.35fr 0.8fr 0.58fr;
+  gap: 12px;
+}
+
+.meta-card {
+  min-height: 82px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid rgba(230, 221, 210, 0.105);
+  border-radius: var(--radius-md);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(230, 221, 210, 0.06),
+      transparent 56%
+    ),
+    rgba(255, 255, 255, 0.026);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 16px 38px rgba(0, 0, 0, 0.16);
+}
+
+.meta-label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--fog);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.meta-value {
+  display: block;
+
+  color: var(--text-primary);
+  font-size: 13.2px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 960px) {
+  .cover-frame {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .compact-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-thesis-title {
+    font-size: clamp(26px, 7vw, 42px);
+  }
+}

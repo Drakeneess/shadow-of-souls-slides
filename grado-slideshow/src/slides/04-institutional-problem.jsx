@@ -1,7 +1,5 @@
 ﻿import Slide from "../components/Slide.jsx";
-import Figure from "../components/Figure.jsx";
-
-import ishikawaDiagram from "../assets/images/ishikawa-deteccion-temprana.png";
+import IshikawaDiagram from "../components/IshikawaDiagram.jsx";
 
 import "../styles/slides/Slide04.css";
 
@@ -31,12 +29,7 @@ export default function InstitutionalProblemSlide() {
           </div>
         </div>
 
-        <Figure
-          src={ishikawaDiagram}
-          alt="Diagrama de Ishikawa sobre la dificultad en la detección temprana de depresión"
-          variant="diagram"
-          className="ishikawa-figure"
-        />
+        <IshikawaDiagram />
       </div>
     </Slide>
   );

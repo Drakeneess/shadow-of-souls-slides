@@ -1,0 +1,107 @@
+.ishikawa-card {
+  width: 100%;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  padding: 14px 18px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 52% 50%,
+      rgba(230, 221, 210, 0.1),
+      rgba(167, 155, 141, 0.04) 42%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    rgba(18, 17, 15, 0.94);
+
+  border: 1px solid rgba(230, 221, 210, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 0 0 70px rgba(230, 221, 210, 0.025),
+    var(--shadow-soft);
+}
+
+.ishikawa-svg {
+  width: 100%;
+  height: auto;
+  max-height: 470px;
+}
+
+/* Líneas */
+.fishbone-main,
+.fishbone-branch,
+.fishbone-subcause {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.fishbone-main {
+  stroke: rgba(190, 196, 205, 0.74);
+  stroke-width: 2.7;
+}
+
+.fishbone-branch {
+  stroke: rgba(190, 196, 205, 0.6);
+  stroke-width: 2.3;
+}
+
+.fishbone-subcause {
+  stroke: rgba(190, 196, 205, 0.42);
+  stroke-width: 1.8;
+}
+
+.fishbone-arrow {
+  fill: rgba(190, 196, 205, 0.72);
+}
+
+/* Cajas */
+.ishikawa-box {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+
+  text-align: center;
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 800;
+  line-height: 1.08;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(169, 160, 147, 0.98),
+      rgba(128, 120, 109, 0.98)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.ishikawa-category {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.ishikawa-problem {
+  padding: 14px 10px;
+  font-size: 11.6px;
+  line-height: 1.12;
+}
+
+/* Texto de subcausas */
+.ishikawa-item {
+  fill: rgba(237, 233, 225, 0.88);
+  font-size: 11.5px;
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}

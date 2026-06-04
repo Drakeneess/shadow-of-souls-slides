@@ -1,9 +1,9 @@
 ﻿import { motion } from "framer-motion";
 import {
-  ClipboardCheck,
   Gamepad2,
-  ScanSearch,
-  ShieldCheck,
+  Puzzle,
+  MessageSquareText,
+  RefreshCcw,
 } from "lucide-react";
 
 import Slide from "../components/Slide.jsx";
@@ -43,7 +43,7 @@ export default function SeriousGamesSlide() {
   return (
     <Slide
       eyebrow="Marco conceptual"
-      title="Videojuegos serios como entorno de observación"
+      title="Videojuegos serios como experiencias con propósito"
       className="serious-games-slide"
     >
       <motion.div
@@ -56,16 +56,16 @@ export default function SeriousGamesSlide() {
           <Figure
             src={seriousGameConcept}
             alt="Concepto referencial de serious game"
-            caption="Los videojuegos serios combinan interacción, propósito formativo o analítico y registro del comportamiento en contexto."
+            caption="Los videojuegos serios integran elementos lúdicos con un propósito educativo, formativo, social, terapéutico o analítico."
             variant="cover"
             className="slide09-main-figure"
           />
 
           <div className="slide09-visual-tags">
-            <span>Interacción</span>
-            <span>Contexto</span>
-            <span>Observación</span>
-            <span>Registro</span>
+            <span>Reglas</span>
+            <span>Mecánicas</span>
+            <span>Narrativa</span>
+            <span>Retroalimentación</span>
           </div>
         </motion.div>
 
@@ -95,19 +95,20 @@ export default function SeriousGamesSlide() {
 
             <p>
               Un videojuego serio es una experiencia interactiva diseñada con un
-              propósito que va más allá del entretenimiento. En este contexto,
-              permite registrar decisiones, tiempos, exploración y otras
-              conductas dentro de un entorno controlado.
+              propósito adicional al entretenimiento. A través de reglas,
+              mecánicas, narrativa y retroalimentación, permite abordar objetivos
+              educativos, formativos, sociales, terapéuticos o analíticos dentro
+              de un entorno lúdico controlado.
             </p>
 
             <div className="slide09-flow">
-              <div className="slide09-flow-step">Estímulo</div>
+              <div className="slide09-flow-step">Objetivo</div>
+              <div className="slide09-flow-line" />
+              <div className="slide09-flow-step">Mecánica</div>
               <div className="slide09-flow-line" />
               <div className="slide09-flow-step">Interacción</div>
               <div className="slide09-flow-line" />
-              <div className="slide09-flow-step">Registro</div>
-              <div className="slide09-flow-line" />
-              <div className="slide09-flow-step">Análisis</div>
+              <div className="slide09-flow-step">Retroalimentación</div>
             </div>
           </motion.div>
 
@@ -127,19 +128,19 @@ export default function SeriousGamesSlide() {
                     delay: 0.2,
                   }}
                 >
-                  <ShieldCheck size={20} strokeWidth={1.7} />
+                  <Puzzle size={20} strokeWidth={1.7} />
                 </motion.div>
 
                 <div>
-                  <span className="slide09-kicker">Alcance</span>
-                  <h3>No sustituye la evaluación</h3>
+                  <span className="slide09-kicker">Propósito</span>
+                  <h3>Más allá del entretenimiento</h3>
                 </div>
               </div>
 
               <p>
-                El juego no reemplaza la evaluación psicológica profesional ni
-                emite diagnósticos clínicos; funciona como herramienta de apoyo
-                para observación inicial.
+                Conserva elementos propios del videojuego, pero los orienta hacia
+                un objetivo adicional, como aprendizaje, entrenamiento,
+                sensibilización, exploración o análisis.
               </p>
             </motion.div>
 
@@ -158,19 +159,19 @@ export default function SeriousGamesSlide() {
                     delay: 0.4,
                   }}
                 >
-                  <ScanSearch size={20} strokeWidth={1.7} />
+                  <MessageSquareText size={20} strokeWidth={1.7} />
                 </motion.div>
 
                 <div>
-                  <span className="slide09-kicker">Utilidad</span>
-                  <h3>Observación en contexto interactivo</h3>
+                  <span className="slide09-kicker">Interacción</span>
+                  <h3>Participación activa del usuario</h3>
                 </div>
               </div>
 
               <p>
-                Su valor está en permitir que ciertas conductas emerjan durante
-                la interacción, facilitando el registro de patrones difíciles de
-                captar en una entrevista tradicional.
+                El jugador toma decisiones, explora escenarios, resuelve
+                situaciones y modifica el desarrollo de la experiencia mediante
+                sus acciones.
               </p>
             </motion.div>
           </div>
@@ -178,19 +179,19 @@ export default function SeriousGamesSlide() {
           <motion.div className="slide09-note-card" variants={fadeUp}>
             <div className="slide09-card-header compact-header">
               <div className="slide09-icon">
-                <ClipboardCheck size={20} strokeWidth={1.7} />
+                <RefreshCcw size={20} strokeWidth={1.7} />
               </div>
 
               <div>
-                <span className="slide09-kicker">Enfoque</span>
-                <h3>Herramienta de apoyo</h3>
+                <span className="slide09-kicker">Retroalimentación</span>
+                <h3>Respuesta del sistema</h3>
               </div>
             </div>
 
             <p>
-              El videojuego crea un espacio donde la conducta puede ser
-              observada, registrada e interpretada como señal indirecta, siempre
-              bajo revisión profesional posterior.
+              El sistema responde a las acciones del jugador mediante cambios
+              narrativos, mecánicos o visuales, reforzando la relación entre
+              decisión, consecuencia y experiencia.
             </p>
           </motion.div>
         </motion.div>

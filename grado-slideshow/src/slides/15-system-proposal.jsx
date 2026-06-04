@@ -7,9 +7,8 @@ import {
 } from "lucide-react";
 
 import Slide from "../components/Slide.jsx";
-import Figure from "../components/Figure.jsx";
 
-import systemGeneralProposal from "../assets/images/system-general-proposal.png";
+import SystemArchitectureDiagram from "../components/SystemArchitectureDiagram.jsx";
 
 import "../styles/slides/Slide15.css";
 
@@ -76,13 +75,7 @@ export default function SystemProposalSlide() {
         animate="visible"
       >
         <motion.div className="system-diagram-card" variants={fadeUp}>
-          <Figure
-            src={systemGeneralProposal}
-            alt="Diagrama de propuesta general del sistema"
-            caption="Figura. Propuesta general del sistema: Shadow of Souls, backend, base de datos híbrida y panel web."
-            variant="diagram"
-            className="system-proposal-figure"
-          />
+          <SystemArchitectureDiagram />
         </motion.div>
 
         <motion.div className="system-summary-column" variants={staggerContainer}>
