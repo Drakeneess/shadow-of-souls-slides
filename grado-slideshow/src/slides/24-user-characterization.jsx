@@ -40,33 +40,6 @@ const staggerContainer = {
   },
 };
 
-const participantGroups = [
-  {
-    icon: GraduationCap,
-    value: "24",
-    label: "Estudiantes",
-    text: "Participantes voluntarios de tercero a sexto de secundaria.",
-  },
-  {
-    icon: UsersRound,
-    value: "1",
-    label: "Gabinete psicológico",
-    text: "Profesional encargada de revisar la pertinencia de los resultados.",
-  },
-  {
-    icon: School,
-    value: "2",
-    label: "Docentes",
-    text: "Apoyo en coordinación, observación y logística de sesiones.",
-  },
-  {
-    icon: Building2,
-    value: "2",
-    label: "Autoridades",
-    text: "Dirección y subdirección para autorización y supervisión.",
-  },
-];
-
 const conditions = [
   {
     icon: HandHeart,
@@ -94,7 +67,7 @@ export default function UserCharacterizationSlide() {
       className="user-characterization-slide"
     >
       <motion.div
-        className="slide24-layout"
+        className="slide24-layout compact-slide24-layout"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -113,70 +86,46 @@ export default function UserCharacterizationSlide() {
                 ease: "easeInOut",
               }}
             >
-              <UsersRound size={28} strokeWidth={1.7} />
+              <School size={28} strokeWidth={1.7} />
             </motion.div>
 
             <div>
-              <span className="user-kicker">Participantes del estudio</span>
-              <h3>Quiénes participaron y bajo qué condiciones</h3>
+              <span className="user-kicker">Contexto de aplicación</span>
+              <h3>Unidad Educativa Técnico Humanística Pater Noster</h3>
             </div>
           </div>
 
           <p>
             La aplicación se realizó con estudiantes de tercero a sexto de
-            secundaria de la Unidad Educativa Técnico Humanística Pater Noster,
-            bajo participación voluntaria, consentimiento informado y
-            disponibilidad técnica para usar el videojuego.
+            secundaria, en un contexto escolar real, bajo participación
+            voluntaria y disponibilidad técnica para utilizar el videojuego.
           </p>
 
           <div className="user-context-chip">
             <Building2 size={16} strokeWidth={1.7} />
-            <span>Unidad Educativa Pater Noster · La Paz, Bolivia</span>
+            <span>La Paz, Bolivia</span>
           </div>
         </motion.div>
 
-        <motion.div className="user-stats-card" variants={fadeUp}>
+        <motion.div className="user-stats-card compact-user-stats-card" variants={fadeUp}>
           <div className="user-stat-big">
+            <GraduationCap size={24} strokeWidth={1.7} />
             <span>Población objetivo</span>
             <strong>56</strong>
             <p>estudiantes candidatos de 3ro a 6to de secundaria</p>
           </div>
 
+          <div className="user-stat-divider" />
+
           <div className="user-stat-big selected">
+            <UsersRound size={24} strokeWidth={1.7} />
             <span>Muestra aplicada</span>
             <strong>24</strong>
             <p>estudiantes participantes voluntarios</p>
           </div>
         </motion.div>
 
-        <motion.div className="participant-grid" variants={staggerContainer}>
-          {participantGroups.map(({ icon: Icon, value, label, text }) => (
-            <motion.div className="participant-card" variants={fadeUp} key={label}>
-              <motion.div
-                className="participant-icon"
-                animate={{
-                  opacity: [0.74, 1, 0.74],
-                  scale: [1, 1.035, 1],
-                }}
-                transition={{
-                  duration: 3.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Icon size={19} strokeWidth={1.7} />
-              </motion.div>
-
-              <div>
-                <strong>{value}</strong>
-                <span>{label}</span>
-                <p>{text}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div className="conditions-card" variants={fadeUp}>
+        <motion.div className="conditions-card compact-conditions-card" variants={fadeUp}>
           <div className="conditions-header">
             <ClipboardCheck size={20} strokeWidth={1.7} />
             <span>Condiciones de participación</span>

@@ -128,7 +128,7 @@
   display: block;
   margin-bottom: 3px;
   color: var(--fog);
-  font-size: 9.7px;
+  font-size: 16.7px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -153,12 +153,12 @@
 }
 
 .conclusions-main-card p {
-  font-size: 11.8px;
+  font-size: 14.8px;
 }
 
 .conclusions-final-card p,
 .conclusions-limit-card p {
-  font-size: 10.9px;
+  font-size: 13.9px;
 }
 
 /* General points */
@@ -215,7 +215,7 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--fog);
-  font-size: 10.8px;
+  font-size: 14.8px;
   font-weight: 700;
 }
 
@@ -235,7 +235,7 @@
   z-index: 1;
   margin: 0;
   color: var(--text-secondary);
-  font-size: 10.8px;
+  font-size: 15.8px;
   line-height: 1.22;
 }
 

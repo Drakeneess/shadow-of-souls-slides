@@ -106,8 +106,8 @@ export default function PopulationSampleSlide() {
 
           <motion.div className="population-stat-card" variants={fadeUp}>
             <HandHeart size={24} strokeWidth={1.7} />
-            <strong>voluntaria</strong>
-            <span>participación con criterios de inclusión</span>
+            <strong>Criterios</strong>
+            <span>participación voluntaria e inclusión técnica</span>
           </motion.div>
         </motion.div>
 
@@ -123,19 +123,17 @@ export default function PopulationSampleSlide() {
             </div>
           </div>
 
-          <div className="sample-list">
+          <div className="sample-list sample-list-three">
             <div>
               <strong>24</strong>
               <span>estudiantes voluntarios</span>
             </div>
+
             <div>
               <strong>1</strong>
               <span>gabinete psicológico</span>
             </div>
-            <div>
-              <strong>2</strong>
-              <span>docentes colaboradores</span>
-            </div>
+
             <div>
               <strong>2</strong>
               <span>autoridades institucionales</span>

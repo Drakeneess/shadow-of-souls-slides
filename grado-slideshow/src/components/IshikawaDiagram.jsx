@@ -7,7 +7,7 @@ const groups = [
     box: { x: 60, y: 28, w: 180, h: 54 },
     branch: { x1: 270, y1: 260, x2: 180, y2: 94 },
     items: [
-      { x1: 205, y: 138, x2: 360, labelX: 372, text: "Ocultamiento emocional" },
+      { x1: 205, y: 138, x2: 360, labelX: 372, text: "Ocultamiento\nemocional" },
       { x1: 225, y: 178, x2: 360, labelX: 372, text: "Resistencia a hablar" },
       { x1: 245, y: 218, x2: 360, labelX: 372, text: "Normalización del malestar" },
     ],
@@ -31,7 +31,7 @@ const groups = [
     items: [
       { x1: 520, y: 138, x2: 675, labelX: 687, text: "Sobrecarga docente" },
       { x1: 540, y: 178, x2: 675, labelX: 687, text: "Poco tiempo de observación" },
-      { x1: 560, y: 218, x2: 675, labelX: 687, text: "Ausencia de alertas tempranas" },
+      { x1: 560, y: 218, x2: 675, labelX: 687, text: "Ausencia de alertas\ntempranas" },
     ],
   },
   {
@@ -126,7 +126,15 @@ export default function IshikawaDiagram() {
                   y={item.y}
                   dominantBaseline="middle"
                 >
-                  {item.text}
+                  {item.text.split("\n").map((line, lineIndex) => (
+                    <tspan
+                      key={line}
+                      x={item.labelX}
+                      dy={lineIndex === 0 ? "-0.35em" : "1.2em"}
+                    >
+                      {line}
+                    </tspan>
+                  ))}
                 </text>
               </g>
             ))}

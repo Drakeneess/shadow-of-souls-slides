@@ -168,16 +168,17 @@ export default function AdolescentDepressionSlide() {
               </motion.div>
 
               <div>
-                <span className="concept-kicker">Dificultad de observación</span>
-                <h3>¿Por qué cuesta verla?</h3>
+                <span className="concept-kicker">Distinción clave</span>
+                <h3>Diagnóstico y detección</h3>
               </div>
             </div>
 
-            <ul className="observation-list compact-observation-list">
-              <li>Los adolescentes pueden no verbalizar su malestar.</li>
-              <li>Los cambios pueden confundirse con la etapa evolutiva.</li>
-              <li>Muchas señales aparecen de forma indirecta o gradual.</li>
-            </ul>
+            <p className="concept-text">
+              El diagnóstico clínico confirma una condición mediante evaluación
+              profesional. La detección temprana, en cambio, identifica señales iniciales
+              de posible riesgo para orientar una revisión oportuna sin emitir una
+              conclusión clínica.
+            </p>
           </motion.div>
         </motion.div>
       </motion.div>

@@ -1,6 +1,5 @@
 ﻿import { motion } from "framer-motion";
 import {
-  CalendarCheck,
   CheckCircle2,
   Database,
   Eye,
@@ -81,11 +80,6 @@ const validationFlow = [
 ];
 
 const validationConditions = [
-  {
-    icon: CalendarCheck,
-    label: "Inicio",
-    value: "03 de noviembre de 2025",
-  },
   {
     icon: UserCheck,
     label: "Uso",

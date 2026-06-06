@@ -142,31 +142,26 @@ export default function GameSessionResultsSlide() {
           <pre>{`{
   "id_session": 20,
   "created_at": "2025-11-03T21:57:49Z",
-  "log_data": {
-    "actions": [
-      {
-        "type": "Movement",
-        "timestamp": "2025-11-03T21:57:20Z",
-        "posX": 3.8178,
-        "posY": -2.0766,
-        "currentHealth": 1.0,
-        "extras": ["Direction: Left"]
-      },
-      {
-        "type": "Light Attacking",
-        "timestamp": "2025-11-03T21:57:27Z",
-        "extras": [
-          "Current Weapon: Autojuicio",
-          "Current Combo: 0"
-        ]
-      },
-      {
-        "type": "Stopped",
-        "timestamp": "2025-11-03T21:57:29Z",
-        "extras": ["Direction: None"]
-      }
-    ]
-  }
+  "actions": [
+    {
+      "type": "Movement",
+      "timestamp": "21:57:20",
+      "posX": 3.8178,
+      "posY": -2.0766,
+      "currentHealth": 1.0
+    },
+    {
+      "type": "Light Attacking",
+      "timestamp": "21:57:27",
+      "weapon": "Autojuicio",
+      "combo": 0
+    },
+    {
+      "type": "Stopped",
+      "timestamp": "21:57:29",
+      "direction": "None"
+    }
+  ]
 }`}</pre>
         </motion.div>
 

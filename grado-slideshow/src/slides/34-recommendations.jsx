@@ -6,7 +6,6 @@ import {
   Globe2,
   LineChart,
   Microscope,
-  Repeat2,
   UsersRound,
 } from "lucide-react";
 
@@ -181,16 +180,6 @@ export default function RecommendationsSlide() {
               </div>
             ))}
           </div>
-        </motion.div>
-
-        <motion.div className="recommendations-note-card" variants={fadeUp}>
-          <Repeat2 size={20} strokeWidth={1.7} />
-
-          <p>
-            Estas recomendaciones no modifican el alcance del sistema actual:
-            orientan su mejora, contraste y expansión en nuevas etapas de
-            investigación.
-          </p>
         </motion.div>
       </motion.div>
     </Slide>
