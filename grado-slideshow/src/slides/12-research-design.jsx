@@ -55,7 +55,7 @@ const designItems = [
   {
     icon: Layers3,
     label: "Caso único",
-    text: "Se focaliza en la Unidad Educativa Técnico Humanística Pater Noster.",
+    text: "Se focaliza en la Unidad Educativa Pater Noster.",
   },
 ];
 
