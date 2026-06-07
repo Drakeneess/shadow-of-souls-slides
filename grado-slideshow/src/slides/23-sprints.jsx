@@ -42,45 +42,45 @@ const sprints = [
   {
     number: "01",
     icon: ServerCog,
-    title: "Fundamentos e infraestructura",
+    title: "Base técnica del sistema",
     items: [
-      "Estructura base del sistema",
-      "Backend inicial",
-      "Modelo de datos",
-      "Conexión entre módulos",
+      "Backlog y casos de uso iniciales",
+      "Modelo relacional de datos",
+      "Login y acceso web inicial",
+      "Prototipo jugable base",
     ],
   },
   {
     number: "02",
     icon: Gamepad2,
-    title: "Mecánicas y visualización",
+    title: "Narrativa, telemetría y panel",
     items: [
-      "Mecánicas observables",
-      "Registro de interacción",
-      "Primeras vistas del panel",
-      "Flujo juego-sistema",
+      "Diálogos interactivos con CSV",
+      "Decisiones simbólicas vinculadas al BDI-II",
+      "Registro de inputs, tiempos e interacciones",
+      "API de ingesta de sesiones JSON",
     ],
   },
   {
     number: "03",
     icon: LineChart,
-    title: "Analítica",
+    title: "Progresión y analítica",
     items: [
-      "Preprocesamiento",
-      "Variables conductuales",
-      "Clusterización",
-      "Indicadores visuales",
+      "Checkpoints y persistencia avanzada",
+      "Menú principal y continuidad de partida",
+      "Dashboards por rol y KPIs",
+      "Reportes, sesiones y clusterización",
     ],
   },
   {
     number: "04",
     icon: Sparkles,
-    title: "Pulido y demo integrada",
+    title: "Integración y validación final",
     items: [
-      "Correcciones funcionales",
-      "Integración completa",
-      "Validación de flujo",
-      "Demo final",
+      "Base de datos final y alertas",
+      "Panel responsivo",
+      "Mapa modular y música dinámica",
+      "Bosses, demo integrada y despliegue",
     ],
   },
 ];
@@ -122,9 +122,10 @@ export default function SprintDevelopmentSlide() {
           </div>
 
           <p>
-            El desarrollo se organizó en cuatro sprints, avanzando desde la
-            infraestructura base hasta la integración funcional de la demo,
-            incluyendo mecánicas, visualización, analítica y pulido final.
+            El desarrollo se organizó en cuatro sprints incrementales. Cada
+            etapa incorporó componentes funcionales concretos: base de datos y
+            prototipo inicial, telemetría narrativa, módulos analíticos,
+            reportes, alertas, responsividad y una demo integrada del sistema.
           </p>
         </motion.div>
 
@@ -212,9 +213,9 @@ export default function SprintDevelopmentSlide() {
         <motion.div className="sprint-note-card" variants={fadeUp}>
           <Braces size={20} strokeWidth={1.7} />
           <p>
-            La lógica incremental permitió validar cada componente antes de
-            integrarlo en el flujo completo: videojuego, backend, almacenamiento,
-            analítica y panel web.
+            El proceso permitió pasar de una base técnica inicial a un ecosistema
+            funcional compuesto por videojuego, API, almacenamiento, análisis de
+            datos y panel web para revisión institucional.
           </p>
         </motion.div>
       </motion.div>

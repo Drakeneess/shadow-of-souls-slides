@@ -3,7 +3,6 @@ import {
   Activity,
   BarChart3,
   Clock3,
-  GitBranch,
   MousePointerClick,
 } from "lucide-react";
 
@@ -122,18 +121,18 @@ const staggerContainer = {
 const resultPoints = [
   {
     icon: MousePointerClick,
-    label: "Acciones",
-    text: "El volumen total no diferencia por sí solo los clústeres.",
+    label: "Acciones por clúster",
+    text: "Las medianas fueron similares: C0 ≈ 398, C1 ≈ 410 y C2 ≈ 440 acciones.",
   },
   {
     icon: Clock3,
-    label: "Latencia",
-    text: "El ritmo temporal muestra variaciones y dispersión entre grupos.",
+    label: "Latencia promedio",
+    text: "Las medianas se ubicaron entre ≈ 4.0 s y ≈ 4.7 s; C1 presentó un atípico de 12.7 s.",
   },
   {
     icon: Activity,
-    label: "APM",
-    text: "La frecuencia de interacción presenta amplitud considerable.",
+    label: "APM global",
+    text: "La distribución se concentró entre 76 y 164 APM, con media aproximada de 109 APM.",
   },
 ];
 
@@ -168,14 +167,16 @@ export default function StudyGraphsSlide() {
             </motion.div>
 
             <div>
-              <span className="study-kicker">Indicadores conductuales</span>
+              <span className="study-kicker">Resultados gráficos</span>
               <h3>57 sesiones procesadas</h3>
             </div>
           </div>
 
           <p>
-            Los gráficos resumen diferencias en volumen de acciones, ritmo
-            temporal y frecuencia de interacción durante las sesiones analizadas.
+            Los gráficos muestran cómo se distribuyeron las sesiones según
+            acciones, latencia promedio y acciones por minuto. Las diferencias
+            entre clústeres no dependen de una sola variable, sino de la
+            combinación de varios indicadores.
           </p>
         </motion.div>
 
@@ -230,15 +231,6 @@ export default function StudyGraphsSlide() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div className="study-note-card" variants={fadeUp}>
-          <GitBranch size={20} strokeWidth={1.7} />
-          <p>
-            La segmentación no responde a una variable aislada, sino a la
-            configuración conjunta de múltiples indicadores conductuales
-            estandarizados mediante escalamiento estadístico.
-          </p>
         </motion.div>
       </motion.div>
     </Slide>

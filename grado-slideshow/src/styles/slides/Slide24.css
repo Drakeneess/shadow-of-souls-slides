@@ -226,7 +226,7 @@
   opacity: 0.9;
 }
 
-/* Conditions */
+/* Characterization */
 
 .conditions-header {
   position: relative;
@@ -247,7 +247,7 @@
   letter-spacing: -0.02em;
 }
 
-.conditions-grid {
+.profile-definition-grid {
   position: relative;
   z-index: 1;
 
@@ -256,32 +256,45 @@
   gap: 10px;
 }
 
-.condition-chip {
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-
+.profile-definition-card {
+  min-height: 102px;
   padding: 12px;
+
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 9px;
+  align-items: start;
 
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
+
   color: var(--fog);
   background: rgba(255, 255, 255, 0.024);
 }
 
-.condition-chip svg {
-  flex: 0 0 auto;
+.profile-definition-card svg {
+  margin-top: 2px;
   color: var(--fog);
 }
 
-.condition-chip span {
-  color: var(--text-secondary);
-  font-size: 11.3px;
-  font-weight: 750;
-  line-height: 1.15;
+.profile-definition-card strong {
+  display: block;
+  margin-bottom: 5px;
+
+  color: var(--text-primary);
+  font-size: 10.8px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+}
+
+.profile-definition-card p {
+  margin: 0;
+
+  color: var(--text-secondary);
+  font-size: 10.6px;
+  line-height: 1.22;
 }
 
 @keyframes slide24Sheen {
@@ -334,7 +347,7 @@
     min-height: 1px;
   }
 
-  .conditions-grid {
+  .profile-definition-grid {
     grid-template-columns: 1fr;
   }
 }

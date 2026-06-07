@@ -1,13 +1,12 @@
 ﻿import { motion } from "framer-motion";
 import {
+  BarChart3,
   Building2,
   ClipboardCheck,
+  Gamepad2,
   GraduationCap,
-  HandHeart,
   Laptop,
   School,
-  ShieldCheck,
-  UserCheck,
   UsersRound,
 } from "lucide-react";
 
@@ -40,22 +39,26 @@ const staggerContainer = {
   },
 };
 
-const conditions = [
-  {
-    icon: HandHeart,
-    label: "Participación voluntaria",
-  },
-  {
-    icon: ShieldCheck,
-    label: "Consentimiento informado",
-  },
+const characterizationPoints = [
   {
     icon: Laptop,
-    label: "Medios técnicos disponibles",
+    label: "Perfil tecnológico",
+    text: "Se identificaron condiciones de acceso, familiaridad digital y disponibilidad técnica para utilizar el videojuego.",
   },
   {
-    icon: UserCheck,
-    label: "Criterios de inclusión",
+    icon: Gamepad2,
+    label: "Familiaridad lúdica",
+    text: "Se consideraron hábitos de juego y cercanía con experiencias interactivas para valorar la pertinencia del formato.",
+  },
+  {
+    icon: ClipboardCheck,
+    label: "Uso no diagnóstico",
+    text: "La caracterización funcionó como contexto de análisis, sin emitir juicios clínicos individuales.",
+  },
+  {
+    icon: BarChart3,
+    label: "Base comparativa",
+    text: "Los resultados del BDI-II se usaron como referente psicométrico para contextualizar patrones conductuales.",
   },
 ];
 
@@ -96,46 +99,57 @@ export default function UserCharacterizationSlide() {
           </div>
 
           <p>
-            La aplicación se realizó con estudiantes de tercero a sexto de
-            secundaria, en un contexto escolar real, bajo participación
-            voluntaria y disponibilidad técnica para utilizar el videojuego.
+            La caracterización permitió contextualizar a los usuarios finales
+            antes del análisis conductual, considerando hábitos tecnológicos,
+            familiaridad con videojuegos, condiciones de aplicación y el uso del
+            BDI-II como referente comparativo.
           </p>
 
           <div className="user-context-chip">
             <Building2 size={16} strokeWidth={1.7} />
-            <span>La Paz, Bolivia</span>
+            <span>La Paz, Bolivia · Contexto escolar real</span>
           </div>
         </motion.div>
 
-        <motion.div className="user-stats-card compact-user-stats-card" variants={fadeUp}>
+        <motion.div
+          className="user-stats-card compact-user-stats-card"
+          variants={fadeUp}
+        >
           <div className="user-stat-big">
             <GraduationCap size={24} strokeWidth={1.7} />
-            <span>Población objetivo</span>
-            <strong>56</strong>
-            <p>estudiantes candidatos de 3ro a 6to de secundaria</p>
+            <span>Muestra aplicada</span>
+            <strong>24</strong>
+            <p>estudiantes participantes en la aplicación del sistema</p>
           </div>
 
           <div className="user-stat-divider" />
 
           <div className="user-stat-big selected">
             <UsersRound size={24} strokeWidth={1.7} />
-            <span>Muestra aplicada</span>
-            <strong>24</strong>
-            <p>estudiantes participantes voluntarios</p>
+            <span>BDI-II aplicado</span>
+            <strong>17</strong>
+            <p>estudiantes con referente psicométrico vinculado al análisis</p>
           </div>
         </motion.div>
 
-        <motion.div className="conditions-card compact-conditions-card" variants={fadeUp}>
+        <motion.div
+          className="conditions-card compact-conditions-card"
+          variants={fadeUp}
+        >
           <div className="conditions-header">
             <ClipboardCheck size={20} strokeWidth={1.7} />
-            <span>Condiciones de participación</span>
+            <span>Lectura de caracterización</span>
           </div>
 
-          <div className="conditions-grid">
-            {conditions.map(({ icon: Icon, label }) => (
-              <div className="condition-chip" key={label}>
-                <Icon size={16} strokeWidth={1.7} />
-                <span>{label}</span>
+          <div className="profile-definition-grid">
+            {characterizationPoints.map(({ icon: Icon, label, text }) => (
+              <div className="profile-definition-card" key={label}>
+                <Icon size={17} strokeWidth={1.7} />
+
+                <div>
+                  <strong>{label}</strong>
+                  <p>{text}</p>
+                </div>
               </div>
             ))}
           </div>
