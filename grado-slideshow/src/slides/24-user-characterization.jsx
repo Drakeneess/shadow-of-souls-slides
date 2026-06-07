@@ -91,7 +91,7 @@ export default function UserCharacterizationSlide() {
 
             <div>
               <span className="user-kicker">Contexto de aplicación</span>
-              <h3>Unidad Educativa Técnico Humanística Pater Noster</h3>
+              <h3>Unidad Educativa Pater Noster</h3>
             </div>
           </div>
 
