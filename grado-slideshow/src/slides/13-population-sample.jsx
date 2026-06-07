@@ -69,7 +69,7 @@ export default function PopulationSampleSlide() {
 
             <div>
               <span className="population-kicker">Caso de estudio</span>
-              <h3>Unidad Educativa Técnico Humanística Pater Noster</h3>
+              <h3>Unidad Educativa Pater Noster</h3>
             </div>
           </div>
 
