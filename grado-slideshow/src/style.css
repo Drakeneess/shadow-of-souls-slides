@@ -304,17 +304,6 @@ h1 {
   font-size: 14px;
 }
 
-/* Footer */
-
-.slide-footer {
-  position: fixed;
-  right: 32px;
-  bottom: 24px;
-  z-index: 2;
-  color: var(--text-muted);
-  font-size: 15px;
-  letter-spacing: 0.06em;
-}
 
 /* Animaciones */
 

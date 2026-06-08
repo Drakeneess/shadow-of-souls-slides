@@ -91,3 +91,87 @@
   width: 100vw;
   height: 100vh;
 }
+
+.presentation-timer {
+  height: 34px;
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  border: 1px solid rgba(230, 221, 210, 0.13);
+  border-radius: 999px;
+
+  color: var(--text-secondary);
+
+  background:
+    radial-gradient(circle at top left, rgba(230, 221, 210, 0.12), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012)),
+    rgba(18, 17, 15, 0.92);
+
+  font: inherit;
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.presentation-timer::before {
+  content: "Tiempo";
+  color: var(--fog);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.presentation-timer span:last-child {
+  min-width: 48px;
+  color: var(--text-primary);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(230, 221, 210, 0.35);
+}
+
+.presentation-timer.is-running .timer-dot {
+  background: rgba(230, 221, 210, 0.95);
+  box-shadow:
+    0 0 12px rgba(230, 221, 210, 0.42),
+    0 0 24px rgba(167, 155, 141, 0.24);
+}
+
+.presentation-timer.is-paused {
+  opacity: 0.82;
+}
+
+.slide-counter {
+  height: 30px;
+  padding: 0 11px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--text-secondary);
+
+  background:
+    radial-gradient(circle at top left, rgba(167, 155, 141, 0.08), transparent 48%),
+    rgba(18, 17, 15, 0.84);
+
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+
+  font-variant-numeric: tabular-nums;
+}
